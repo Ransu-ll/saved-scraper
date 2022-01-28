@@ -31,7 +31,7 @@ It will not be all that relevant for this script anyway.
 Note: You will need to have installed Python 3.10+ for this script to work. Compatibility with older versions not
 guaranteed.
 
-Note: You will need to install 3rd party modules `praw` and `dotenv`. If unsure how to install them, see  the offical
+Note: You will need to install 3rd party modules `praw` and `dotenv`. If unsure how to install them, see  the official
 document [Installing Python Modules](https://docs.python.org/3/installing/index.html). The former is used to access your
 Reddit account, the latter is for isolating your login details, as well as `client id` and `client secret`.
 
