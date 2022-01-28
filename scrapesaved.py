@@ -13,7 +13,6 @@ def get_user_info(_id: str, secret: str, agent: str,
                               user_agent=agent,
                               username=user,
                               password=_pass + _2fa)
-    reddit_user.read_only = True
 
     # Check that the credentials are valid.
     try:
@@ -83,9 +82,11 @@ def main(name: str, use_file: bool = True) -> None:
     # Access Reddit account
     if use_file:
         _2FA = ":" + input("2FA (if none, press enter): ")
+        breakpoint()
         reddit = get_user_info(config["CLIENT_ID"], config["CLIENT_SECRET"],
                                config["USER_AGENT"], config["USER_NAME"],
                                config["USER_PASS"], _2FA)
+        breakpoint()
     else:
         _client_id = input("CLIENT_ID: ")
         _client_secret = input("CLIENT_SECRET: ")
@@ -131,5 +132,5 @@ def main(name: str, use_file: bool = True) -> None:
 
 if __name__ == "__main__":
     database_name = "information.db"
-    main(database_name, True)
+    main(database_name)
     export_database(database_name)
