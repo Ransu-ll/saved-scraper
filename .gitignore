@@ -1,0 +1,5 @@
+# Produced files
+*.csv
+*.db
+
+*.env
