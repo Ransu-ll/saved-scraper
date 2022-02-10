@@ -24,7 +24,7 @@ def get_user_info(_id: str, secret: str, agent: str,
 
 def access_database(name: str) -> tuple[sqlite3.Cursor, sqlite3.Connection]:
     """Access the database containing saved content"""
-    
+
     con = sqlite3.connect(name)
     cur = con.cursor()
 
@@ -82,11 +82,10 @@ def main(name: str, use_file: bool = True) -> None:
     # Access Reddit account
     if use_file:
         _2FA = ":" + input("2FA (if none, press enter): ")
-        breakpoint()
         reddit = get_user_info(config["CLIENT_ID"], config["CLIENT_SECRET"],
                                config["USER_AGENT"], config["USER_NAME"],
                                config["USER_PASS"], _2FA)
-        breakpoint()
+
     else:
         _client_id = input("CLIENT_ID: ")
         _client_secret = input("CLIENT_SECRET: ")
